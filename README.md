@@ -13,7 +13,7 @@ You will need a userscript manager to install this script. I recommend using Tam
 
 ## Screenshots
 
-![Torn Chat & Settings](https://i.imgur.com/bbA2WnE.png)
+![Torn Chat & Settings](https://i.imgur.com/Yj3e7rY.png)
 
 ## Bugs, issues and ideas
 
