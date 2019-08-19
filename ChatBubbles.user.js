@@ -19,7 +19,6 @@ let config = {
 let msgObserver = new MutationObserver((mutationsList, observer) => {
     for (let mutation of mutationsList) {
         if (mutation.addedNodes.length && mutation.addedNodes[0].classList) {
-            console.log(mutation);
             if (mutation.target.classList.contains("chat-box_Wjbn9")) { // chat maximized
                 styleMessages(mutation.addedNodes[0].querySelectorAll(".message_oP8oM"));
                 let viewport = mutation.addedNodes[0].querySelector(".viewport_1F0WI");
