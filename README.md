@@ -9,7 +9,7 @@ You will need a userscript manager to install this script. I recommend using Tam
 
 ## Download
 
-[Install Torn Clean Chat](https://github.com/Pi77Bull/Chat-Bubbles-for-Torn/raw/master/ChatBubbles.user.js)
+[Install Chat Bubbles for Torn](https://github.com/Pi77Bull/Chat-Bubbles-for-Torn/raw/master/ChatBubbles.user.js)
 
 ## Screenshots
 
