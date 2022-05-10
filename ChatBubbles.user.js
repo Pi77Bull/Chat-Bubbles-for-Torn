@@ -5,7 +5,7 @@
 // @grant         GM_addStyle
 // @grant         GM_getValue
 // @grant         GM_setValue
-// @version       2.0.0
+// @version       2.0.1
 // @author        Pi77Bull [2082618]
 // @run-at        document-start
 // @inject-into   content
