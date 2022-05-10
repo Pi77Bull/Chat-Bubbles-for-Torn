@@ -77,7 +77,6 @@ function classifyMessages(messageElements) {
 		messageElement.classList.add('bubbleend');
 		messageElement.querySelector('a').textContent = messageElement.querySelector('a').textContent.replace(':', '');
 
-		console.log(username);
 		if (messageElement.querySelector('a').href.endsWith(userid)) {
 			messageElement.classList.add('me');
 		} else if (messageElement.querySelector('span').innerText.includes(username)) {
@@ -140,16 +139,16 @@ GM_addStyle(`
 `);
 
 GM_addStyle(`
-	[class^='overview_'],
-	[class*=' overview_'] {
+	[class^='_overview_'],
+	[class*=' _overview_'] {
 		display: flex !important;
 		flex-direction: column !important;
 		height: 100%;
 		box-sizing: border-box;
 	}
 
-	[class^='message_'],
-	[class*=' message_'] {
+	[class^='_message_'],
+	[class*=' _message_'] {
 		display: flex;
 		flex-direction: column;
 		border-top-left-radius: 0.25em;
@@ -168,28 +167,28 @@ GM_addStyle(`
 		font-family: var(--fontFamily);
 	}
 
-	.dark-mode [class^='message_'],
-	.dark-mode [class*=' message_'] {
+	.dark-mode [class^='_message_'],
+	.dark-mode [class*=' _message_'] {
 		background-color: var(--bubbleColorDarkMode);
 	}
 
-	[class^='message_']:first-of-type,
-	[class*=' message_']:first-of-type {
+	[class^='_message_']:first-of-type,
+	[class*=' _message_']:first-of-type {
 		margin-top: 0;
 	}
 
-	[class^='message_'] > a,
-	[class*=' message_'] > a {
+	[class^='_message_'] > a,
+	[class*=' _message_'] > a {
 		width: max-content;
 	}
 
-	[class^='message_'] a,
-	[class*=' message_'] a {
+	[class^='_message_'] a,
+	[class*=' _message_'] a {
 		color: inherit !important;
 	}
 
-	[class^='message_'].me,
-	[class*=' message_'].me {
+	[class^='_message_'].me,
+	[class*=' _message_'].me {
 		align-self: flex-end;
 		border-top-left-radius: 1em;
 		border-bottom-left-radius: 1em;
@@ -199,50 +198,50 @@ GM_addStyle(`
 		color: var(--meFontColor);
 	}
 
-	[class^='message_'].me > a,
-	[class*=' message_'].me > a {
+	[class^='_message_'].me > a,
+	[class*=' _message_'].me > a {
 		display: none;
 	}
 
-	.dark-mode [class^='message_'].me,
-	.dark-mode [class*=' message_'].me {
+	.dark-mode [class^='_message_'].me,
+	.dark-mode [class*=' _message_'].me {
 		background-color: var(--meBubbleColorDarkMode);
 		color: var(--meFontColorDarkMode);
 	}
 
-	[class^='message_'].bubbleend,
-	[class*=' message_'].bubbleend {
+	[class^='_message_'].bubbleend,
+	[class*=' _message_'].bubbleend {
 		border-bottom-left-radius: 1em;
 		border-bottom-right-radius: 1em;
 	}
 
-	[class^='message_'].samesender,
-	[class*=' message_'].samesender {
+	[class^='_message_'].samesender,
+	[class*=' _message_'].samesender {
 		margin-top: 0;
 	}
 
-	[class^='message_'].samesender > a,
-	[class*=' message_'].samesender > a {
+	[class^='_message_'].samesender > a,
+	[class*=' _message_'].samesender > a {
 		display: none;
 	}
 
-	[class^='message_'].mention,
-	[class*=' message_'].mention {
+	[class^='_message_'].mention,
+	[class*=' _message_'].mention {
 		border: 1px solid;
 	}
 
-	[class^='chat-box-content_'],
-	[class*=' chat-box-content_'] {
+	[class^='_chat-box-content_'],
+	[class*=' _chat-box-content_'] {
 		color: var(--fontColor) !important;
 	}
 
-	.dark-mode [class^='chat-box-content_'],
-	.dark-mode [class*=' chat-box-content_'] {
+	.dark-mode [class^='_chat-box-content_'],
+	.dark-mode [class*=' _chat-box-content_'] {
 		color: var(--fontColorDarkMode) !important;
 	}
 
-	[class^='chat-last-message-label_'],
-	[class*=' chat-last-message-label_'] {
+	[class^='_chat-last-message-label_'],
+	[class*=' _chat-last-message-label_'] {
 		margin-top: auto !important;
 	}
 `);
