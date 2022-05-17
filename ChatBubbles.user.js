@@ -5,7 +5,7 @@
 // @grant         GM_addStyle
 // @grant         GM_getValue
 // @grant         GM_setValue
-// @version       2.0.1
+// @version       2.0.2
 // @author        Pi77Bull [2082618]
 // @run-at        document-start
 // @inject-into   content
@@ -47,15 +47,15 @@ const observer = new MutationObserver((mutationsList) => {
 	mutationsList.forEach((mutation) => {
 		for (let node of mutation.addedNodes) {
 			const classList = [...node.classList];
-			if (classList.some((className) => className.startsWith('message_'))) {
+			if (classList.some((className) => className.startsWith('_message_'))) {
 				// new message
 				classifyMessages([node]);
 			} else if (
-				classList.some((className) => className.startsWith('chat-box-content_')) &&
-				![...mutation.target.classList].some((className) => className.startsWith('chat-box-settings_'))
+				classList.some((className) => className.startsWith('_chat-box-content_')) &&
+				![...mutation.target.classList].some((className) => className.startsWith('_chat-box-settings_'))
 			) {
 				// chat maximized
-				classifyMessages(node.querySelectorAll('[class^="message_"], [class*=" message_"]'));
+				classifyMessages(node.querySelectorAll('[class^="_message_"], [class*=" _message_"]'));
 				break;
 			}
 		}
@@ -64,11 +64,11 @@ const observer = new MutationObserver((mutationsList) => {
 
 let userid;
 let username;
-WAIT_FOR('[class^="chat-box-wrap_"], [class*=" chat-box-wrap_"]', config).then((element) => {
+WAIT_FOR('[class^="_chat-box-wrap_"], [class*=" _chat-box-wrap_"]', config).then((element) => {
 	const userElement = document.body.querySelector('script[uid]');
 	userid = userElement.getAttribute('uid');
 	username = userElement.getAttribute('name');
-	classifyMessages(document.querySelectorAll('[class^="message_"], [class*=" message_"]'));
+	classifyMessages(document.querySelectorAll('[class^="_message_"], [class*=" _message_"]'));
 	observer.observe(element, config);
 });
 
